@@ -26,14 +26,5 @@ public class StatusPage {
         // Убеждаемся, что у нас отображается изображение Not found
         assertTrue(driver.findElement(notFoundImage).isDisplayed());
     }
-
-    public StatusPage checkNotFound() {
-        new WebDriverWait(driver, Duration.ofSeconds(EnvConfig.EXPLICIT_WAIT))
-                .until(ExpectedConditions.visibilityOfElementLocated(notFoundImage));
-
-        assert driver.findElement(notFoundImage).isDisplayed();
-
-        return this;
-    }
 }
 

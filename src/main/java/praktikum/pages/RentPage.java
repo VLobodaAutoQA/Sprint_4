@@ -16,10 +16,9 @@ public class RentPage {
     private final By colourGrey = By.id("grey");
     private final By comment = By.xpath(".//input[@placeholder='Комментарий для курьера']");
     private final By createOrderButton = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
-    private final By yandexButton = By.xpath(".//*[@alt='Yandex']");
-    private final By scooterButton = By.xpath(".//*[@alt='Scooter']");
     private final By popUpHeaderAfterCreateOrder = By.xpath(".//div[text()='Заказ оформлен']");
     private final By buttonYes = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Да']");
+    private final By newDuration = By.className("Dropdown-placeholder");
 
     public RentPage(WebDriver driver) {
 
@@ -41,14 +40,17 @@ public class RentPage {
 
     public RentPage inputDuration(String newDuration) {
         driver.findElement(durationRent).click();
-        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.elementToBeClickable(By.className("Dropdown-menu"))).click();
+        new WebDriverWait(driver, Duration.ofSeconds(3)).
+                until(ExpectedConditions.elementToBeClickable(By.className("Dropdown-menu")));
+
+        driver.findElement(By.xpath("//div[text()='" + newDuration + "']")).click();
         return this;
     }
 
     public RentPage changeColour(String colour) {
-        if (colour =="BLACK") {
+        if (colour.equals("BLACK")) {
             driver.findElement(colourBlack).click();
-        } else if (colour == "GREY") {
+        } else if (colour.equals("GREY")) {
             driver.findElement(colourGrey).click();
         }
         return this;
@@ -62,15 +64,6 @@ public class RentPage {
     public void clickButtonCreateOrder() {
 
         driver.findElement(createOrderButton).click();
-    }
-
-    public void clickYandex() {
-
-        driver.findElement(yandexButton).click();
-    }
-    public void clickScooter() {
-
-        driver.findElement(scooterButton).click();
     }
 
     public void clickButtonYes() {

@@ -62,26 +62,12 @@ public class FaqPage {
 
         return this;
     }
-//    public FaqPage checkAnswerIsHidden(String itemId) {
-//        String panelId = "accordion__panel-" + itemId;
-//        WebElement answer = driver.findElement(By.id(panelId));
-//        Assert.assertTrue("Ответ должен быть скрыт", answer.getAttribute("hidden") != null);
-//        return this;
-//    }
-
-//    public FaqPage waitForAnswerToAppear(String itemId) {
-//        String panelId = "accordion__panel-" + itemId;
-//        new WebDriverWait(driver, Duration.ofSeconds(5))
-//                .until(ExpectedConditions.attributeContains(By.id(panelId), "hidden", "false"));
-//        return this;
-//    }
 
     public FaqPage checkQuestionText(String itemId, String expectedQuestion) {
         String actualQuestion = driver.findElement(By.id("accordion__heading-" + itemId)).getText();
         Assert.assertEquals("Текст вопроса не соответствует ожидаемому", expectedQuestion, actualQuestion);
         return this;
     }
-
 
     public FaqPage checkAnswerText(String itemId, String expectedText) {
         String panelId = "accordion__panel-" + itemId;

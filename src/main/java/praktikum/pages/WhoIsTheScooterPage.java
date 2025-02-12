@@ -76,12 +76,4 @@ public class WhoIsTheScooterPage {
     public void clickNextButton() {
         driver.findElement(buttonNext).click(); // Клик по кнопке "Далее"
     }
-
-    public void clickYandex() {
-        driver.findElement(yandexButton).click(); // Клик по кнопке "Яндекс"
-    }
-
-    public void clickScooter() {
-        driver.findElement(scooterButton).click(); // Клик по кнопке "Скутер"
-    }
 }
