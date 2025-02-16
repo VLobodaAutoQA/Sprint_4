@@ -18,7 +18,6 @@ public class RentPage {
     private final By createOrderButton = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
     private final By popUpHeaderAfterCreateOrder = By.xpath(".//div[text()='Заказ оформлен']");
     private final By buttonYes = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Да']");
-    private final By newDuration = By.className("Dropdown-placeholder");
 
     public RentPage(WebDriver driver) {
 

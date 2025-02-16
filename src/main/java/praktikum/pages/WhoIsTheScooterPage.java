@@ -18,11 +18,6 @@ public class WhoIsTheScooterPage {
         this.jsExecutor = (JavascriptExecutor) driver; // Исправил: теперь создается jsExecutor для работы с JavaScript
     }
 
-    // Метод для открытия главной страницы
-    public void openPage() {
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-    }
-
     private final By orderHeader = By.className("Order_Header__BZXOb");
     private final By name = By.xpath(".//input[@placeholder='* Имя']");
     private final By lastName = By.xpath(".//input[@placeholder='* Фамилия']");
@@ -31,8 +26,6 @@ public class WhoIsTheScooterPage {
     private final By telephone = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
     private final By buttonNext = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
     private final String nameStateMetro = ".//button[@value='%s']"; // Форматная строка для выбора станции метро
-    private final By yandexButton = By.xpath(".//*[@alt='Yandex']");
-    private final By scooterButton = By.xpath(".//*[@alt='Scooter']");
 
     // Метод ожидания загрузки страницы заказа
     public WhoIsTheScooterPage waitForLoadOrderPage() {
